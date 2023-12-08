@@ -1,0 +1,7 @@
+{% load menu_tags %}
+</pre>
+<ul>{% for menu in menu_list %}
+    <li>{{ menu.name }} {% menu_tree menu %}</li>
+    {% endfor %}
+</ul>
+<pre class="brush:xml;">

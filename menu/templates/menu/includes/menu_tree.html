@@ -1,0 +1,9 @@
+{% load menu_tags %}
+{% if childrens %}
+</pre>
+<ul>{% for child in childrens %}
+    <li>{{ child.name }} {% menu_tree child %}</li>
+    {% endfor %}
+</ul>
+<pre class="brush:xml;">
+    {% endif %}
