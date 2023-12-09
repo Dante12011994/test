@@ -10,7 +10,3 @@ register = template.Library()
 def menu_tree(parent):
     return {'childrens': Menu.objects.filter(parent=parent)}
 
-
-@register.simple_tag()
-def menu_path(data):
-    return data.url if data.url else f'menu/{data.id}/'

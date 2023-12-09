@@ -6,6 +6,9 @@ from menu.models import Menu
 
 
 def main(request):
+    """
+    Главная страница отображения меню
+    """
     menu_list = Menu.objects.filter(parent=None)
     context = {
         "menu_list": menu_list,
@@ -14,6 +17,9 @@ def main(request):
 
 
 class MenuDetailView(DetailView):
+    """
+    Просмотр отдельного раздела меню
+    """
     model = Menu
-    reverse_lazy
+
 

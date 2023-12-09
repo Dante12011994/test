@@ -5,4 +5,4 @@ from menu.models import Menu
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'parent')
+    list_display = ('id', 'name', 'parent', 'url')
