@@ -1,9 +1,17 @@
 {% load menu_tags %}
 {% if childrens %}
-</pre>
-<ul>{% for child in childrens %}
-    <li>{{ child.name }} {% menu_tree child %}</li>
+
+<ul>
+    {% for child in childrens %}
+    <a type="button" class="btn btn-sm btn-outline-secondary"
+       {% if child.url %}
+       href="{{ child.url }}">
+        {% else %}
+        href="{% url 'menu:menu_view' child.pk %}">
+        {% endif %}
+        <li>{{ child.name }} {% menu_tree child %}</li>
+    </a>
+
     {% endfor %}
 </ul>
-<pre class="brush:xml;">
-    {% endif %}
+{% endif %}

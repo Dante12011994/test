@@ -1,0 +1,9 @@
+{% load menu_tags %}
+<a type="button" class="btn btn-sm btn-outline-secondary"
+   {% if object.url %}
+       href="{{ object.url }}">
+        {% else %}
+        href="{% url 'menu:menu_view' object.pk %}">
+        {% endif %}
+    <li>{{ object.name }} {% menu_tree object %}</li>
+</a>
